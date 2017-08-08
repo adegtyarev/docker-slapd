@@ -1,0 +1,17 @@
+---
+
+version: "2"
+
+volumes:
+    slapd-data:
+    slapd-etc:
+
+services:
+    slapd:
+        container_name: slapd
+        image: adegtyarev/slapd
+        volumes:
+            - slapd-data:/var/lib/ldap
+            - slapd-etc:/etc/ldap/slapd.d
+        env_file:
+            - .env
