@@ -8,8 +8,6 @@ RUN         apt update -q && \
             locale-gen en_US.UTF-8 && \
             dpkg-reconfigure locales
 
-RUN         apt upgrade -y
-
 RUN         apt install -y \
                 ca-certificates \
                 ldap-utils \
